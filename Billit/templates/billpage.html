@@ -1,0 +1,19 @@
+<html>
+
+<h1> {{ form.category }}h1>
+<img src="{{MEDIA_URL}}/{{img}}" height=500 width=350 alt="Product Image" />
+
+<body>
+    <form action="" method ="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+    
+  {% if Error %}
+    <p> Error : {{Error}}</p>
+  {% endif %}  
+<input type="submit" ,value="Billit">    
+</form>  
+
+</body>
+
+</html>

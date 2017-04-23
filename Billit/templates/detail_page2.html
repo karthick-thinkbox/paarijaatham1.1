@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+{% load static %}  
+<html lang="en">
+<head>
+  <title>Details Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Paarijaatham</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active" ><a href="#">Detail</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'home_page'%}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a href="{% url 'exit_page'%}"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h2>
+{% if flg == 'soldout' %}
+    <h2>Product Already SoldOut !!!</h2>
+{% endif %}
+
+{% if flg == 'bill' %}
+    <h2>Product In Stock </h2>
+{% endif %}
+
+
+{% if flg == 'deal' %}
+    <h2>Product Successfully Billed !!!</h2>
+{%endif%}
+  
+
+<div>
+  <img src="{{MEDIA_URL}}/{{object.prod_img}}" height=250 width=150  vspace:10 hspace:10 style="float : left "alt="Product Image" />
+  
+ </div> 
+  <br>  
+  <div >
+  <p> UID : {{ object.product_id }}</p>
+  <p> Category : {{ object.category }}</p>
+  <p> Sold price : {{ object.sold_price }}</p>
+  <p> Sold by : {{ object.sold_by }}</p>
+  <p> Induction : {{ object.induction_date }}</p>
+  <p> Sold on : {{ object.sales_date }}</p>
+  
+</div>
+
+{% if flg == 'bill' %}
+ <form action="/billit/{{object.product_id}}" method ='get'>
+ <input type="submit" value="Bill It">
+ </form>
+ 
+ {%endif%}
+</body>
+</html>

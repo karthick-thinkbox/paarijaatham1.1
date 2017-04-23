@@ -1,0 +1,171 @@
+<link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js"></script>
+
+<style>
+
+.prod_page{float:left; width:100%; }
+
+.product_item_view{float:left; width:100%; margin-top:40%;}
+
+
+.product_detail_view{float:left; width:100%; padding:20px; box-shadow:0 0 3px #aaa; padding:10px; margin-top:5%;}
+
+.pro_heading{float:left;width:100%; font-size:45px; font-weight:normal;font-family: 'Allerta', sans-serif;;}
+
+.new_coll{float:left; width:100%;font-size:18px; font-style:italic; margin:30px 0; position:relative; }
+
+#stock_available {color:red; font-size:18px; font-weight:500; font-style:normal; text-decoration:none !important; padding:40%;}
+
+.pro_rate{float:left;width:100%; margin:15px 0; padding-left:10%; font-size:25px; font-style:italic;}
+
+.color_quantity{width:80%;float:left; margin-left:10%; border-top:1px solid #aaa; border-bottom:1px solid #aaa; height:70px; padding:10px;margin-bottom:30px;}
+
+.color{width:35%; float:left;}
+
+.color_select{float:left; width:50%; margin-left:10px;margin-top:10px;}
+
+.color_select li{float:left; width:7%; text-align:center; padding:0 10px;}
+
+#red{    width: 15px;
+    height: 15px;
+    background-color: red;
+    float: left;
+    border-radius: 1em;}
+
+#green{width:15px; height:15px; background:green;   background-color: green;
+    float: left;
+    border-radius: 1em;}
+
+#black{width:15px; height:15px; background:black;   background-color: black;
+    float: left;
+    border-radius: 1em;}
+    
+    .color span{    float: left;
+    margin-bottom: 2px;
+    width: 100%;
+}
+
+.slash{    float: left;
+    width: 5%;
+    font-size: 75px;
+    padding: 0;
+    margin: 0;
+    line-height: 0.6;}
+    
+.quantity{float:left; width:45%;}
+</style>
+
+
+<div class="prod_page">
+    <div class="container">
+	<div class="row">
+	        <div class="col-md-12 col-xs-12 col-sm-12">
+	            <div class="col-md-4 col-sm-4 col-xs-12">
+	                 <div class="product_item_view">
+	                        <img src="{{MEDIA_URL}}/{{object.prod_img}}" height=250 width=150  vspace:10 hspace:10 alt="Product Image" />
+  
+	                </div>
+	             </div>
+	             <!--Product Detail-->
+	             <div class="col-md-8 col-sm-8 col-xs-12">
+	                 <div class="product_detail_view">
+	                      <div class="pro_heading">
+	                          MY NEW PRODUCT
+	                         
+	                         <span class="new_coll">
+	                             New Collection 
+	                             <span id="stock_available">
+	                                 Instock
+	                             </span>
+	                         </span>
+	                          
+	                      </div>
+	                      
+	                      <div class="pro_rate">
+	                          $250
+	                      </div>
+	                      
+	                      <div class="color_quantity">
+	                         <div class="color">
+	                              <span>Color: </span>
+	                              
+	                              <ul class="color_select">
+	                                  <li> 
+	                                        <span id="red">
+	                                            
+	                                        </span>
+	                                  </li>
+	                                    <li> 
+	                                        <span id="green">
+	                                            
+	                                        </span>
+	                                  </li>
+	                                    <li> 
+	                                        <span id="black">
+	                                            
+	                                        </span>
+	                                  </li>
+	                              </ul>
+	                         </div>
+	                         
+	                         <div class="slash">
+	                             /
+	                         </div>
+	                         <div class="quantity">
+	                             <form>
+	                                 <div class="from-group">
+	                                     <a class="btn-floating btn-large red"><i class="fa fa-bolt"></i></a> <input type="text" width="70"/> <a class="btn-floating btn-large red"><i class="fa fa-bolt"></i></a>
+	                                 </div>
+	                             </form>
+	                         </div>
+	                      </div>
+	                      
+	                      <!---->
+	                      
+	                      <div class="col-md-12">
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs tabs-3 red" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Follow</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Contact</a>
+    </li>
+</ul>
+<!-- Tab panels -->
+<div class="tab-content card">
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+    </div>
+    <!--/.Panel 1-->
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="panel2" role="tabpanel">
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+    </div>
+    <!--/.Panel 2-->
+    <!--Panel 3-->
+    <div class="tab-pane fade" id="panel3" role="tabpanel">
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+    </div>
+    <!--/.Panel 3-->
+</div>
+
+	                      </div>
+	                </div>
+	             </div>
+	        </div>
+	</div>
+</div>
+</div>

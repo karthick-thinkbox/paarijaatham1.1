@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+{% load static %}  
+<html lang="en">
+<head>
+  <title>Details Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    
+
+
+
+</style>    
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Paarijaatham</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active" ><a href="#">Detail</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'home_page'%}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a href="{% url 'exit_page'%}"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+{% if flg == 'soldout' %}
+    <h3 class="bg-danger"> &nbsp &nbsp Product SoldOut  </h3>
+{% endif %}
+
+{% if flg == 'bill' %}
+    <h3 class="bg-success"> &nbsp &nbsp Product In Stock </h3>
+{% endif %}
+
+
+{% if flg == 'deal' %}
+    <h3 class="bg-success" > &nbsp &nbsp Product Successfully Billed </h3>
+{%endif%}
+    
+  <div class="container" >
+      <div class="row">
+          <div class="col-md-6">
+                <img src="{{MEDIA_URL}}/{{object.prod_img}}"  height=500 width=350 class="img-rounded" style="padding:10px"   alt="Product Image" />
+          </div>
+      
+          <div class="col-md-6">
+              <h2><span class="label label-primary">{{ object.category }} </span></h2>
+                   <p style="font-size:150% ; font-family:calibri">
+                   <b>UID</b> : {{ object.product_id }}<br>
+                   <b>Category</b> : {{ object.category }}<br>
+                   <b>Sold price</b> : {{ object.sold_price }}<br>
+                   <b>Sold by</b> : {{ object.sold_by }}<br>
+                   <b>Induction</b> : {{ object.induction_date }}<br>
+                   <b>Sold on</b> : {{ object.sales_date }}<br>
+                   </p>
+                
+          </div>  
+      </div>  
+      
+      
+  </div>          
+    
+    
+    
+    
+    
+ 

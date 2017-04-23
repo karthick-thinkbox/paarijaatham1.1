@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+{% load static %}  
+<html lang="en">
+<head>
+  <title>Details Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    
+
+
+
+</style>    
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Paarijaatham</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active" ><a href="#">Detail</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'home_page'%}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a href="{% url 'exit_page'%}"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% if flg == 'Validation_Error' %}
+    <h3 class="bg-danger"> &nbsp &nbsp Please Fill All Fileds  </h3>
+{% endif %}
+{% if flg == 'soldout' %}
+    <h3 class="bg-danger"> &nbsp &nbsp Product SoldOut  </h3>
+{% endif %}
+
+{% if flg == 'bill' %}
+    <h3 class="bg-success"> &nbsp &nbsp Product In Stock </h3>
+{% endif %}
+
+
+{% if flg == 'deal' %}
+    <h3 class="bg-success" > &nbsp &nbsp Product Successfully Billed </h3>
+{%endif%}
+    
+  <div class="container" >
+      <div class="row">
+          <div class="col-md-6">
+                <img src="{{MEDIA_URL}}/{{img}}"  height=500 width=350 class="img-rounded" style="padding:10px"   alt="Product Image" />
+          </div>
+      
+          <div class="col-md-6">
+              <h2><span class="label label-primary">{{cat}} </span></h2>
+                   <p style="font-size:150% ; font-family:calibri">
+                      <form action="" method ="post" enctype="multipart/form-data">
+  
+                          {% csrf_token %}
+                          <p>    
+                          <b style="padding-right:7em;">UID &nbsp</b>{{ form.product_id }} <br><br>
+                          <b style="padding-right:5em;">Category</b>{{ form.category }}<br><br>
+                          <b style="padding-right:3em;">Selling Price&nbsp</b>{{ form.sold_price }}<br><br>
+                          <b style="padding-right:1.5em;">Customer Name</b>{{ form.cust_name }}<br><br>
+                          <b style="padding-right:6em;">Mobile</b>{{ form.cust_phone }}<br><br>
+                          <b style="padding-right:6.5em;">Email</b>{{ form.cust_Email }} <br><br> 
+                          </p>
+                          
+                            
+                          {% if Error %}
+                            <p> Error : {{Error}}</p>
+                          {% endif %}  
+                        <input type="submit" class="btn btn-success" value="Bill it">    
+                        </form>  
+                   </p>
+                
+          </div>  
+      </div>  
+      
+      
+  </div>          
+    
+    
+    
+    
+    
+ 
+
+
+

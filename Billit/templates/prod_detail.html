@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}  
+<html>
+<head> <h1>Product Details</h1>  </head>
+<img src="{{MEDIA_URL}}/{{object.prod_img}}" height=500 width=350 alt="Product Image" />
+<a href="/home/">home</a>
+<br>
+<body>
+  {% if flg == 'soldout' %}
+    <h2>Product Already SoldOut !!!</h2>
+  {% else %}
+    <h2>Product Successfully sold </h2>
+  {% endif %}
+    
+  
+  <br>  
+  
+  <p> UID : {{ object.product_id }}</p>
+  <p> Category : {{ object.category }}</p>
+  <p> Sold price : {{ object.sold_price }}</p>
+  <p> Sold by : {{ object.sold_by }}</p>
+  <p> Induction : {{ object.induction_date }}</p>
+  <p> Sold on : {{ object.sales_date }}</p>
+  
+</body>
+
+</html>
